@@ -115,6 +115,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Student.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="uc_students_sorted_by_id.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CS20AProj3.cpp" />
+    <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
