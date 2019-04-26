@@ -118,11 +118,19 @@
     <ClInclude Include="Student.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="uc_by_school_by_id1.txt" />
+    <Text Include="uc_by_school_by_id2.txt" />
     <Text Include="uc_students_sorted_by_id.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CS20AProj3.cpp" />
     <ClCompile Include="Student.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Project3.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Project_3 runtime.PNG" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

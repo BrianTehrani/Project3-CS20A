@@ -23,6 +23,12 @@
     <Text Include="uc_students_sorted_by_id.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="uc_by_school_by_id2.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="uc_by_school_by_id1.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Student.cpp">
@@ -31,5 +37,15 @@
     <ClCompile Include="CS20AProj3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Project3.pdf">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Project_3 runtime.PNG">
+      <Filter>Source Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
