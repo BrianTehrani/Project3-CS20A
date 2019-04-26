@@ -119,32 +119,43 @@ void sortByGroupById2(Student students[], int len) {
 
 	for (int i = 0; i < len; i++) //# of students per school
 		count[schoolToIndex(students[i].getSchool())]++;
-	
+
+	int students_UCB  = count[0];
+	int students_UCD  = count[1] + students_UCB;
+	int students_UCI  = count[2] + students_UCD;
+	int students_UCLA = count[3] + students_UCI;
+	int students_UCM  = count[4] + students_UCLA;
+	int students_UCSD = count[5] + students_UCM;
+	int students_UCSF = count[6] + students_UCSD;
+
 	for (int i = 0; i < len; i++) {
 		if (students[i].getSchool() == "UCB") {
-			temp_array[count[0]--] = students[i];
+			temp_array[--count[0]] = students[i];
 		}
 		else if (students[i].getSchool() == "UCD") {
-			temp_array[count[1]--] = students[i];
+			temp_array[--count[1] + students_UCB] = students[i];
 		}
 		else if (students[i].getSchool() == "UCI") {
-			temp_array[count[2]--] = students[i];
+			temp_array[--count[2] + students_UCD] = students[i];
 		}
 		else if (students[i].getSchool() == "UCLA") {
-			temp_array[count[3]--] = students[i];
+			temp_array[--count[3] + students_UCI] = students[i];
 		}
 		else if (students[i].getSchool() == "UCM") {
-			temp_array[count[4]--] = students[i];
+			temp_array[--count[4] + students_UCLA] = students[i];
 		}
 		else if (students[i].getSchool() == "UCSD") {
-			temp_array[count[5]--] = students[i];
+			temp_array[--count[5] + students_UCM] = students[i];
 		}
 		else if (students[i].getSchool() == "UCSF") {
-			temp_array[count[6]--] = students[i];
+			temp_array[--count[6] + students_UCSD] = students[i];
 		}
 	}
-
-	students = temp_array;
+	
+	int temp_len = len;
+	for (int i = 0; i < len; i++) {
+		students[i] = temp_array[--temp_len];
+	}
 
 	delete[] temp_array;
 	delete[] count;
