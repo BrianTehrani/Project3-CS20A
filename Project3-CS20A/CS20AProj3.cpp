@@ -117,11 +117,34 @@ void sortByGroupById2(Student students[], int len) {
 	int* count = new int[7](); //initiallize count w/0
 	Student* temp_array = new Student[len];
 
-	cout << count[0];
-	for (int i = 0; i < len; i++)
+	for (int i = 0; i < len; i++) //# of students per school
 		count[schoolToIndex(students[i].getSchool())]++;
 	
-	
+	for (int i = 0; i < len; i++) {
+		if (students[i].getSchool() == "UCB") {
+			temp_array[count[0]--] = students[i];
+		}
+		else if (students[i].getSchool() == "UCD") {
+			temp_array[count[1]--] = students[i];
+		}
+		else if (students[i].getSchool() == "UCI") {
+			temp_array[count[2]--] = students[i];
+		}
+		else if (students[i].getSchool() == "UCLA") {
+			temp_array[count[3]--] = students[i];
+		}
+		else if (students[i].getSchool() == "UCM") {
+			temp_array[count[4]--] = students[i];
+		}
+		else if (students[i].getSchool() == "UCSD") {
+			temp_array[count[5]--] = students[i];
+		}
+		else if (students[i].getSchool() == "UCSF") {
+			temp_array[count[6]--] = students[i];
+		}
+	}
+
+	students = temp_array;
 
 	delete[] temp_array;
 	delete[] count;
@@ -137,9 +160,9 @@ int main() {
 	// Rough timing
 	time_t start, end;
 
-	//Student* uc1 = readStudentsFromFile("uc_students_sorted_by_id.txt", LEN);
+	Student* uc1 = readStudentsFromFile("uc_students_sorted_by_id.txt", LEN);
 	time(&start);
-	//sortByGroupById1(uc1, LEN);
+	sortByGroupById1(uc1, LEN);
 	time(&end);
 		cout << "Using library sort it took " << difftime(end, start) << " seconds."
 				<< endl;
@@ -151,7 +174,7 @@ int main() {
 			cout << "Using counting sort it took " << difftime(end, start) << " seconds."
 					<< endl;
 
-	//writeStudentsToFile(uc1, LEN, "uc_by_school_by_id1.txt");
+	writeStudentsToFile(uc1, LEN, "uc_by_school_by_id1.txt");
 	writeStudentsToFile(uc2, LEN, "uc_by_school_by_id2.txt");
 	return 0;
 }
